@@ -1,8 +1,8 @@
 {
-  "name": "goose-track",
+  "name": "calendar-goose-track",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Mich47.github.io/goose-track/",
+  "homepage": "https://AleksArden.github.io/calendar-goose-track/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.3",
