@@ -1,3 +1,6 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { useMedia } from 'react-use';
+import PropTypes from 'prop-types';
 import {
   startOfISOWeek,
   format,
@@ -8,25 +11,12 @@ import {
   isSameMonth,
 } from 'date-fns';
 import {
-  ListMonth,
-  DateOfWeekCurrentMonth,
-  DateOfWeekOtherMonth,
-  ChoosedDate,
-  DayWeek,
-  Days,
-  Month,
-  ListDays,
-  OtherMonthStyledLink,
-  CurrentMonthStyledLink,
-} from './CalendarHead.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import {
   addChoosedDay,
   addIndexCurrentDay,
 } from 'redux/calendar/calendar.slice';
 import { selectCurrentMonth } from 'redux/calendar/calendar.selectors';
-import PropTypes from 'prop-types';
-import { useMedia } from 'react-use';
+
+import * as STC from './CalendarHead.styled';
 
 export const CalendarHead = ({ currentDay }) => {
   const currentMonth = useSelector(selectCurrentMonth);
@@ -46,30 +36,30 @@ export const CalendarHead = ({ currentDay }) => {
       end: endOfISOWeek(new Date(), { weekStartsOn: 1 }),
     });
   }
-  const List = currentDay ? ListDays : ListMonth;
+  const List = currentDay ? STC.ListDays : STC.ListMonth;
   return (
     <>
       <List>
         {daysInWeek?.map((day, idx) => {
-          const Week = currentDay ? Days : Month;
+          const Week = currentDay ? STC.Days : STC.Month;
           const StyledLink = !isSameMonth(new Date(day), new Date(currentMonth))
-            ? OtherMonthStyledLink
-            : CurrentMonthStyledLink;
+            ? STC.OtherMonthStyledLink
+            : STC.CurrentMonthStyledLink;
 
           const DateOfWeek = isSameMonth(new Date(day), new Date(currentMonth))
-            ? DateOfWeekCurrentMonth
-            : DateOfWeekOtherMonth;
+            ? STC.DateOfWeekCurrentMonth
+            : STC.DateOfWeekOtherMonth;
 
           const DateWeek = isSameDay(new Date(currentDay), new Date(day))
-            ? ChoosedDate
+            ? STC.ChoosedDate
             : DateOfWeek;
 
           return (
             <Week key={idx}>
               {isWide ? (
-                <DayWeek>{format(day, 'EEE')}</DayWeek>
+                <STC.DayWeek>{format(day, 'EEE')}</STC.DayWeek>
               ) : (
-                <DayWeek>{format(day, 'EEEEE')}</DayWeek>
+                <STC.DayWeek>{format(day, 'EEEEE')}</STC.DayWeek>
               )}
 
               {currentDay && (

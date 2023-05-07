@@ -59,7 +59,6 @@ const StyledLink = styled(NavLink)`
   display: flex;
   justify-content: center;
   align-items: center;
-
   isolation: isolate;
 
   width: 36px;

@@ -1,3 +1,5 @@
+import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   format,
   formatISO,
@@ -12,16 +14,6 @@ import {
   isLastDayOfMonth,
 } from 'date-fns';
 import {
-  MonthName,
-  Wrapper,
-  MonthWrapper,
-  ButtonLeft,
-  ButtonRight,
-  WrapperButton,
-  Icon,
-} from './PeriodPaginator.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import {
   addChoosedDay,
   addCurrentMonth,
   addIndexCurrentDay,
@@ -31,8 +23,9 @@ import {
   selectCurrentMonth,
   selectIsLoading,
 } from 'redux/calendar/calendar.selectors';
+
 import Icons from '../../../images/sprite.svg';
-import PropTypes from 'prop-types';
+import * as STC from './PeriodPaginator.styled';
 
 export const PeriodPaginator = ({ currentIndex, choosedDay }) => {
   const currentMonth = parseISO(useSelector(selectCurrentMonth));
@@ -86,38 +79,40 @@ export const PeriodPaginator = ({ currentIndex, choosedDay }) => {
   };
 
   return (
-    <Wrapper index={currentIndex}>
-      <MonthWrapper>
+    <STC.Wrapper index={currentIndex}>
+      <STC.MonthWrapper>
         {currentIndex !== null ? (
-          <MonthName>{format(new Date(choosedDay), 'd MMMM yyyy')}</MonthName>
+          <STC.MonthName>
+            {format(new Date(choosedDay), 'd MMMM yyyy')}
+          </STC.MonthName>
         ) : (
-          <MonthName>{format(currentMonth, 'MMMM yyyy')}</MonthName>
+          <STC.MonthName>{format(currentMonth, 'MMMM yyyy')}</STC.MonthName>
         )}
-      </MonthWrapper>
+      </STC.MonthWrapper>
 
-      <WrapperButton>
+      <STC.WrapperButton>
         {currentIndex !== null ? (
           isFirstDayOfMonth(new Date(choosedDay)) ? (
-            <ButtonLeft disabled>
-              <Icon width="20" height="20">
+            <STC.ButtonLeft disabled>
+              <STC.Icon width="20" height="20">
                 <use href={`${Icons}#calendar-right-sf`}></use>
-              </Icon>
-            </ButtonLeft>
+              </STC.Icon>
+            </STC.ButtonLeft>
           ) : (
-            <ButtonLeft to={`day/${prevDay}`} onClick={handlePrevDay}>
-              <Icon width="20" height="20">
+            <STC.ButtonLeft to={`day/${prevDay}`} onClick={handlePrevDay}>
+              <STC.Icon width="20" height="20">
                 <use href={`${Icons}#calendar-right-sf`}></use>
-              </Icon>
-            </ButtonLeft>
+              </STC.Icon>
+            </STC.ButtonLeft>
           )
         ) : isThisMonth(new Date(currentMonth)) ? (
-          <ButtonLeft disabled>
-            <Icon width="20" height="20">
+          <STC.ButtonLeft disabled>
+            <STC.Icon width="20" height="20">
               <use href={`${Icons}#calendar-right-sf`}></use>
-            </Icon>
-          </ButtonLeft>
+            </STC.Icon>
+          </STC.ButtonLeft>
         ) : (
-          <ButtonLeft
+          <STC.ButtonLeft
             to={`month/${formatISO(
               new Date(subMonths(startOfMonth(new Date(currentMonth)), 1)),
               { representation: 'date' }
@@ -130,28 +125,28 @@ export const PeriodPaginator = ({ currentIndex, choosedDay }) => {
             }}
             disabled={isLoading}
           >
-            <Icon width="20" height="20">
+            <STC.Icon width="20" height="20">
               <use href={`${Icons}#calendar-right-sf`}></use>
-            </Icon>
-          </ButtonLeft>
+            </STC.Icon>
+          </STC.ButtonLeft>
         )}
 
         {currentIndex !== null ? (
           isLastDayOfMonth(new Date(choosedDay)) ? (
-            <ButtonRight disabled>
-              <Icon>
+            <STC.ButtonRight disabled>
+              <STC.Icon>
                 <use href={`${Icons}#calendar-left-sf`}></use>
-              </Icon>
-            </ButtonRight>
+              </STC.Icon>
+            </STC.ButtonRight>
           ) : (
-            <ButtonRight to={`day/${nextDay}`} onClick={handleNextDay}>
-              <Icon>
+            <STC.ButtonRight to={`day/${nextDay}`} onClick={handleNextDay}>
+              <STC.Icon>
                 <use href={`${Icons}#calendar-left-sf`}></use>
-              </Icon>
-            </ButtonRight>
+              </STC.Icon>
+            </STC.ButtonRight>
           )
         ) : (
-          <ButtonRight
+          <STC.ButtonRight
             to={`month/${formatISO(
               new Date(addMonths(startOfMonth(new Date(currentMonth)), 1)),
               { representation: 'date' }
@@ -164,13 +159,13 @@ export const PeriodPaginator = ({ currentIndex, choosedDay }) => {
             }}
             disabled={isLoading}
           >
-            <Icon>
+            <STC.Icon>
               <use href={`${Icons}#calendar-left-sf`}></use>
-            </Icon>
-          </ButtonRight>
+            </STC.Icon>
+          </STC.ButtonRight>
         )}
-      </WrapperButton>
-    </Wrapper>
+      </STC.WrapperButton>
+    </STC.Wrapper>
   );
 };
 PeriodPaginator.propTypes = {

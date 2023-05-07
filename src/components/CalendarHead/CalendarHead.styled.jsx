@@ -97,7 +97,7 @@ export const ChoosedDate = styled(DateOfWeek)`
   color: var(--btn-text-color);
 `;
 export const DateOfWeekCurrentMonth = styled(DateOfWeek)`
-  transition: box-shadow var(--animation), box-shadow var(--animation);
+  transition: box-shadow var(--animation);
 
   &:hover,
   :focus {

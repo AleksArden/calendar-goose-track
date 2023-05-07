@@ -47,8 +47,8 @@ export const StyledLinkMonth = styled(StyledLink)`
   border: none;
   border-right: var(--border-calendar-period-type);
   border-radius: 8px 0px 0px 8px;
-  transition: background-color var(--animation), box-shadow var(--animation),
-    box-shadow var(--animation), box-shadow var(--animation);
+
+  transition: background-color var(--animation), box-shadow var(--animation);
 
   &:hover,
   :focus {
@@ -67,8 +67,7 @@ export const StyledLinkDay = styled(StyledLink)`
   border: none;
   border-radius: 0px 8px 8px 0px;
 
-  transition: background-color var(--animation), box-shadow var(--animation),
-    box-shadow var(--animation), box-shadow var(--animation);
+  transition: background-color var(--animation), box-shadow var(--animation);
 
   &:hover,
   :focus {

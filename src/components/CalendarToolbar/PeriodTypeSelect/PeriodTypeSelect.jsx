@@ -1,21 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  Wrapper,
-  StyledLinkDay,
-  StyledLinkMonth,
-  LinkActiveMonth,
-  LinkActiveDay,
-} from './PeriodTypeSelect.styled';
-import {
-  selectChoosedDay,
-  selectCurrentMonth,
-  selectIndexCurrentDay,
-} from 'redux/calendar/calendar.selectors';
 import { format, formatISO, isThisMonth } from 'date-fns';
 import {
   addChoosedDay,
   addIndexCurrentDay,
 } from 'redux/calendar/calendar.slice';
+import {
+  selectChoosedDay,
+  selectCurrentMonth,
+  selectIndexCurrentDay,
+} from 'redux/calendar/calendar.selectors';
+
+import * as STC from './PeriodTypeSelect.styled';
 
 export const PeriodTypeSelect = () => {
   const dispath = useDispatch();
@@ -23,11 +18,12 @@ export const PeriodTypeSelect = () => {
   const choosedDay = useSelector(selectChoosedDay);
   const currentIndex = useSelector(selectIndexCurrentDay);
 
-  const LinkMonth = currentIndex !== null ? StyledLinkMonth : LinkActiveMonth;
-  const LinkDay = currentIndex !== null ? LinkActiveDay : StyledLinkDay;
+  const LinkMonth =
+    currentIndex !== null ? STC.StyledLinkMonth : STC.LinkActiveMonth;
+  const LinkDay = currentIndex !== null ? STC.LinkActiveDay : STC.StyledLinkDay;
 
   return (
-    <Wrapper>
+    <STC.Wrapper>
       {isThisMonth(new Date(currentDate)) ? (
         <LinkMonth
           to={`month/${formatISO(new Date(currentDate), {
@@ -89,6 +85,6 @@ export const PeriodTypeSelect = () => {
           Day
         </LinkDay>
       )}
-    </Wrapper>
+    </STC.Wrapper>
   );
 };
