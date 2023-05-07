@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/calendar-goose-track/static/css/main.d59a7290.css",
-    "main.js": "/calendar-goose-track/static/js/main.573d429c.js",
+    "main.js": "/calendar-goose-track/static/js/main.6b6a3088.js",
     "static/js/941.7313f767.chunk.js": "/calendar-goose-track/static/js/941.7313f767.chunk.js",
-    "static/js/911.c8fb12a7.chunk.js": "/calendar-goose-track/static/js/911.c8fb12a7.chunk.js",
-    "static/js/161.7793ebde.chunk.js": "/calendar-goose-track/static/js/161.7793ebde.chunk.js",
+    "static/js/911.52d5bddf.chunk.js": "/calendar-goose-track/static/js/911.52d5bddf.chunk.js",
+    "static/js/161.b6d909e6.chunk.js": "/calendar-goose-track/static/js/161.b6d909e6.chunk.js",
     "static/js/761.fe07f5ff.chunk.js": "/calendar-goose-track/static/js/761.fe07f5ff.chunk.js",
-    "static/js/961.cc6b881a.chunk.js": "/calendar-goose-track/static/js/961.cc6b881a.chunk.js",
+    "static/js/961.2b16a5e5.chunk.js": "/calendar-goose-track/static/js/961.2b16a5e5.chunk.js",
     "static/js/993.94dfe984.chunk.js": "/calendar-goose-track/static/js/993.94dfe984.chunk.js",
     "static/js/513.8e6007a6.chunk.js": "/calendar-goose-track/static/js/513.8e6007a6.chunk.js",
     "static/media/login-goose-.svg": "/calendar-goose-track/static/media/login-goose-.1c553c6a3f164ed903259ed77dd6b178.svg",
@@ -43,17 +43,17 @@
     "index.html": "/calendar-goose-track/index.html",
     "static/media/logInIcon.svg": "/calendar-goose-track/static/media/logInIcon.a255be8977dff107049bccd8351f44a7.svg",
     "main.d59a7290.css.map": "/calendar-goose-track/static/css/main.d59a7290.css.map",
-    "main.573d429c.js.map": "/calendar-goose-track/static/js/main.573d429c.js.map",
+    "main.6b6a3088.js.map": "/calendar-goose-track/static/js/main.6b6a3088.js.map",
     "941.7313f767.chunk.js.map": "/calendar-goose-track/static/js/941.7313f767.chunk.js.map",
-    "911.c8fb12a7.chunk.js.map": "/calendar-goose-track/static/js/911.c8fb12a7.chunk.js.map",
-    "161.7793ebde.chunk.js.map": "/calendar-goose-track/static/js/161.7793ebde.chunk.js.map",
+    "911.52d5bddf.chunk.js.map": "/calendar-goose-track/static/js/911.52d5bddf.chunk.js.map",
+    "161.b6d909e6.chunk.js.map": "/calendar-goose-track/static/js/161.b6d909e6.chunk.js.map",
     "761.fe07f5ff.chunk.js.map": "/calendar-goose-track/static/js/761.fe07f5ff.chunk.js.map",
-    "961.cc6b881a.chunk.js.map": "/calendar-goose-track/static/js/961.cc6b881a.chunk.js.map",
+    "961.2b16a5e5.chunk.js.map": "/calendar-goose-track/static/js/961.2b16a5e5.chunk.js.map",
     "993.94dfe984.chunk.js.map": "/calendar-goose-track/static/js/993.94dfe984.chunk.js.map",
     "513.8e6007a6.chunk.js.map": "/calendar-goose-track/static/js/513.8e6007a6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d59a7290.css",
-    "static/js/main.573d429c.js"
+    "static/js/main.6b6a3088.js"
   ]
 }
