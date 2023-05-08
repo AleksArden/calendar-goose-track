@@ -1,10 +1,12 @@
 import * as ReactDOM from 'react-dom';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { AddTaskBtn } from '../AddTaskBtn/AddTaskBtn';
 import { ColumnHeadBar } from './ColumnHeadBar/ColumnHeadBar';
 import { ColumnsTasksList } from './ColumnsTasksList/ColumnsTasksList';
-import { Container } from './TasksColumn.styled';
 import { TaskModal } from '../../TaskModal/TaskModal';
+
+import { Container } from './TasksColumn.styled';
 
 export const TasksColumn = ({ status }) => {
   const [showModal, setShowModal] = useState(false);
@@ -35,3 +37,6 @@ export const TasksColumn = ({ status }) => {
     </>
   );
 };
+TasksColumn.propTypes = {
+  status: PropTypes.object.isRequired,
+}

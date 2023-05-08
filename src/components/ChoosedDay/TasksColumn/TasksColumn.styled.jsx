@@ -4,9 +4,10 @@ export const Container = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 14px;
+
   max-height: 100%;
   padding: 20px;
-  gap: 14px;
 
   background: var(--primary-background-color);
   border: var(--border-calendar);
