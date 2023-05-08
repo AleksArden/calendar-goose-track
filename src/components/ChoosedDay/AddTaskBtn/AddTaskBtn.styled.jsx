@@ -4,11 +4,11 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 8px;
+
   padding-top: 16px;
   padding-bottom: 16px;
-  gap: 8px;
   isolation: isolate;
-
   width: 100%;
   height: 48px;
 

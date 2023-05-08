@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { Button, AddTask, Plus } from './AddTaskBtn.styled';
 
 export const AddTaskBtn = ({ handleShowModal }) => {
@@ -9,4 +11,7 @@ export const AddTaskBtn = ({ handleShowModal }) => {
       </Button>
     </>
   );
+};
+AddTaskBtn.propTypes = {
+  handleShowModal: PropTypes.func.isRequired,
 };
