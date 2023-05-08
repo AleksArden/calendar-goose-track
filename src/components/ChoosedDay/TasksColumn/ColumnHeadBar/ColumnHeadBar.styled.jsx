@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   min-width: 100%;
   padding: 7px 0;
 `;
@@ -11,9 +12,14 @@ export const Title = styled.p`
   font-family: var(--primary-font);
   font-style: normal;
   font-weight: 700;
-  font-size: 18px 18px 20px;
+  font-size: 18px;
   line-height: 1.11;
+
   color: var(--primary-text-color);
+  @media (min-width: 768px) {
+    font-size: 20px;
+    line-height: 1.2;
+  }
 `;
 
 export const Button = styled.button`
