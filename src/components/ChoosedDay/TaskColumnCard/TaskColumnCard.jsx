@@ -1,13 +1,9 @@
+import PropTypes from 'prop-types';
 import { Avatar } from 'components/Avatar/Avatar';
-import {
-  Container,
-  TaskPriority,
-  TaskAvatarWrapper,
-  TaskTitle,
-  Wrapper,
-} from './TaskColumnCard.styled';
 import { TaskToolbar } from '../TaskToolbar/TaskToolbar';
 import { TASK_PRIORITY } from 'constants/taskPriority.constants';
+
+import * as STC from './TaskColumnCard.styled';
 
 export const TaskColumnCard = ({
   title = 'Lorem ipsum dolor sit amet consectetur ',
@@ -15,17 +11,22 @@ export const TaskColumnCard = ({
   ...other
 }) => {
   return (
-    <Container>
-      <TaskTitle>{title}</TaskTitle>
-      <Wrapper>
-        <Wrapper>
-          <TaskAvatarWrapper>
+    <STC.Container>
+      <STC.TaskTitle>{title}</STC.TaskTitle>
+      <STC.Wrapper>
+        <STC.Wrapper>
+          <STC.TaskAvatarWrapper>
             <Avatar />
-          </TaskAvatarWrapper>
-          <TaskPriority priority={priority}>{priority}</TaskPriority>
-        </Wrapper>
+          </STC.TaskAvatarWrapper>
+          <STC.TaskPriority priority={priority}>{priority}</STC.TaskPriority>
+        </STC.Wrapper>
         <TaskToolbar title={title} priority={priority} {...other} />
-      </Wrapper>
-    </Container>
+      </STC.Wrapper>
+    </STC.Container>
   );
+};
+TaskColumnCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  priority: PropTypes.object.isRequired,
+  other: PropTypes.node,
 };

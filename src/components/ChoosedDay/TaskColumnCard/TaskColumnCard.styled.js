@@ -5,8 +5,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 28px;
-  padding: 14px 15px 18px 14px;
 
+  padding: 14px 15px 18px 14px;
   width: 100%;
 
   background-color: var(--secondary-background-color);
@@ -39,6 +39,7 @@ export const TaskAvatarWrapper = styled.div`
 
 export const TaskPriority = styled.p`
   padding: 4px 12px;
+
   background: var(
     ${props => {
       if (props.priority === TASK_PRIORITY.medium) {
@@ -56,7 +57,6 @@ export const TaskPriority = styled.p`
   font-weight: 600;
   font-size: 10px;
   line-height: 1.2;
-
   text-align: center;
 
   color: var(--btn-text-color);
